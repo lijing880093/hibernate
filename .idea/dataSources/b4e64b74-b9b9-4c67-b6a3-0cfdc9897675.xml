@@ -818,32 +818,112 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="206" parent="8" name="t_student">
+    <table id="206" parent="8" name="t_classes">
       <Engine>MyISAM</Engine>
     </table>
-    <column id="207" parent="206" name="s_id">
+    <table id="207" parent="8" name="t_department"/>
+    <table id="208" parent="8" name="t_employee"/>
+    <table id="209" parent="8" name="t_student">
+      <Engine>MyISAM</Engine>
+    </table>
+    <column id="210" parent="206" name="c_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="208" parent="206" name="s_name">
+    <column id="211" parent="206" name="c_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="209" parent="206" name="s_sex">
+    <key id="212" parent="206" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>c_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="213" parent="207" name="d_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="214" parent="207" name="d_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="215" parent="207" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>d_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="216" parent="208" name="e_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="217" parent="208" name="e_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="218" parent="208" name="d_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="219" parent="208" name="FK8txmyvslp0sml8e8cmh8nhp5u">
+      <ColNames>d_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="220" parent="208" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>e_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="221" parent="208" name="FK8txmyvslp0sml8e8cmh8nhp5u">
+      <ColNames>d_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>t_department</RefTableName>
+      <RefColNames>d_id</RefColNames>
+    </foreign-key>
+    <column id="222" parent="209" name="s_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="223" parent="209" name="s_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="224" parent="209" name="s_sex">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="210" parent="206" name="birthday">
+    <column id="225" parent="209" name="birthday">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="211" parent="206" name="PRIMARY">
+    <column id="226" parent="209" name="c_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="227" parent="209" name="FKrrtfbmmtctrsh8unx9agbu340">
+      <ColNames>c_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="228" parent="209" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>s_id</ColNames>
       <Primary>1</Primary>

@@ -13,6 +13,15 @@ public class Student {
     private String sex;
     private Date birthday;
     private Integer age;
+    private Classes classes;
+
+    public Classes getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Classes classes) {
+        this.classes = classes;
+    }
 
     public Integer getAge() {
         return age;

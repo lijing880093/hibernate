@@ -5,20 +5,14 @@
 <!-- package="com.hibernate.entity" -->
 <hibernate-mapping package="com.hibernate.entity" > <!-- mapping 是hibernate映射文件  -->
 <!--  name=类名   table=表名   -->
-<class name="Student" table="t_student"  >
+<class name="Department" table="t_department"  >
     <!--id 主键  name 属性  column 列名   type 类名  -->
-    <id name="id" column="s_id" type="java.lang.Integer">
+    <id name="id" column="d_id" type="java.lang.Integer">
         <!--  主键生成策略  increment hibernate框架的生成策略 native是mysql数据库  -->
         <generator class="native" />
     </id>
-    <property name="name" type="java.lang.String" column="s_name"  />
-    <property name="sex" type="java.lang.String" column="s_sex" />
-    <property name="birthday" type="java.util.Date" column="birthday" />
-    <property name="age" type="java.lang.Integer"  insert="false"
- update="false" formula="(select (year(now()) -year(birthday))  from t_student s where s.s_id=s_id)"
+    <property name="name" type="java.lang.String" column="d_name"  />
 
-    />
-    <many-to-one name="classes" column="c_id" class="Classes"  cascade="save-update"></many-to-one>
 </class>
 
 </hibernate-mapping>
